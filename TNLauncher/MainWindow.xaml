@@ -139,14 +139,24 @@
   <DockPanel>
     <Grid DockPanel.Dock="Bottom">
       <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
         <ColumnDefinition />
+        <ColumnDefinition Width="Auto" />
         <ColumnDefinition Width="Auto" />
       </Grid.ColumnDefinitions>
       <Button Margin="5"
+              Command="{Binding ExportCommand}"
+              Content="レジストリの削除 " />
+      <ToggleButton Grid.Column="1"
+                    Content="TNLauncherが作ったレジストリキーを削除し、元の状態に戻します。&#xa;作ったブックマークは使えなくなります。"
+                    Style="{StaticResource HelpButton}" />
+      <Button Grid.Column="3"
+              Margin="5"
               HorizontalAlignment="Right"
               Command="{Binding ExportCommand}"
               Content="Google Chrome用インポートファイルの生成" />
-      <ToggleButton Grid.Column="1"
+      <ToggleButton Grid.Column="4"
                     Content="Chromeのブックマークマネージャでインポートできるファイルを、指定フォルダに作ります。インポートすると「インポートしたブックマーク」に入るので好きなところに移動してください。"
                     Style="{StaticResource HelpButton}" />
     </Grid>

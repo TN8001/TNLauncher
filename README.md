@@ -23,5 +23,5 @@ Google Chromeのお気に入りから、URIスキームを使ってデスクト�
 ## 謝辞
 アプリアイコンを1分で作っていただきました。  
 粉塵ex 様  
-http://www.vector.co.jp/vpack/browse/person/an059721.html
+http://www.vector.co.jp/vpack/browse/person/an059721.html  
 http://com.nicovideo.jp/community/co2136247/

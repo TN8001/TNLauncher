@@ -85,7 +85,6 @@ namespace TNLauncher
         private void Export(string path)
         {
             var text = @"<!DOCTYPE NETSCAPE-Bookmark-file-1>
-<!DOCTYPE NETSCAPE-Bookmark-file-1>
 <!-- Created by TNLauncher
      DO NOT EDIT! -->
 <META HTTP-EQUIV=""Content-Type"" CONTENT=""text/html; charset=UTF-8"">
