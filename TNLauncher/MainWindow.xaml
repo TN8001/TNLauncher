@@ -11,6 +11,7 @@
         SnapsToDevicePixels="True"
         mc:Ignorable="d">
   <Window.Resources>
+    <l:BoolInvertConverter x:Key="BoolInvertConverter" />
     <BitmapImage x:Key="Help" UriSource="_Help.png" />
     <ControlTemplate x:Key="ErrorTemplate">
       <DockPanel>
@@ -146,16 +147,19 @@
         <ColumnDefinition Width="Auto" />
       </Grid.ColumnDefinitions>
       <Button Margin="5"
-              Command="{Binding ExportCommand}"
+              Command="{Binding DeleteRegistryCommand}"
               Content="レジストリの削除 " />
       <ToggleButton Grid.Column="1"
-                    Content="TNLauncherが作ったレジストリキーを削除し、元の状態に戻します。&#xa;作ったブックマークは使えなくなります。"
+                    Content="TNLauncherが作ったレジストリキーをすべて削除し、元の状態に戻します。&#xa;作ったブックマークは使えなくなります。"
                     Style="{StaticResource HelpButton}" />
       <Button Grid.Column="3"
               Margin="5"
               HorizontalAlignment="Right"
               Command="{Binding ExportCommand}"
-              Content="Google Chrome用インポートファイルの生成" />
+              Content="Google Chrome用インポートファイルの生成"
+              IsEnabled="{Binding (Validation.HasError),
+                                  Converter={StaticResource BoolInvertConverter},
+                                  ElementName=textBox}" />
       <ToggleButton Grid.Column="4"
                     Content="Chromeのブックマークマネージャでインポートできるファイルを、指定フォルダに作ります。インポートすると「インポートしたブックマーク」に入るので好きなところに移動してください。"
                     Style="{StaticResource HelpButton}" />
@@ -176,7 +180,8 @@
                  Margin="5,2,0,2"
                  VerticalAlignment="Center"
                  Text="tn-launcher-" />
-      <TextBox Grid.Column="2"
+      <TextBox x:Name="textBox"
+               Grid.Column="2"
                Margin="0,2,5,2"
                VerticalAlignment="Center"
                Text="{Binding Password,
@@ -187,10 +192,13 @@
       <Button Grid.Column="3"
               Margin="5"
               HorizontalAlignment="Right"
-              Command="{Binding RegisterCommand}"
-              Content="UriSchemeの変更" />
+              Command="{Binding CreateRegistryCommand}"
+              Content="UriSchemeの変更"
+              IsEnabled="{Binding (Validation.HasError),
+                                  Converter={StaticResource BoolInvertConverter},
+                                  ElementName=textBox}" />
       <ToggleButton Grid.Column="4"
-                    Content="URIスキームを変更すると、以前作成したブックマークは動かなくなります。作り直すか、ブックマークのURLを変更してください。"
+                    Content="URIスキームを変更すると、以前作成したブックマークは動かなくなります。"
                     Style="{StaticResource HelpButton}" />
 
     </Grid>

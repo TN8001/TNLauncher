@@ -21,7 +21,6 @@ namespace TNLauncher
         {
             InitializeComponent();
             DataContext = new ViewModel();
-
         }
         private void ListBox_PreviewDragOver(object sender, DragEventArgs e)
         {

@@ -58,6 +58,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="util\Converter.cs" />
     <Compile Include="util\DelegateCommand.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Welcome.xaml.cs">

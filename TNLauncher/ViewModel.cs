@@ -30,7 +30,8 @@ namespace TNLauncher
             }
         }
         public DelegateCommand ExportCommand { get; }
-        public DelegateCommand RegisterCommand { get; }
+        public DelegateCommand CreateRegistryCommand { get; }
+        public DelegateCommand DeleteRegistryCommand { get; }
 
         private const string GUID = "{61C94E2B-8FFD-43C9-AB3F-4213BB5D3017}";
         private const string SCHEME_PREFIX = "tn-launcher";
@@ -54,10 +55,22 @@ namespace TNLauncher
 
                 Export(dlg.FileName);
             });
-            RegisterCommand = new DelegateCommand(() =>
+            CreateRegistryCommand = new DelegateCommand(() =>
             {
+                var result = MessageBox.Show("URIスキームを変更すると、以前のブックマークが使えなくなります。\nよろしいですか？",
+                    "TNLauncher", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+                if(result == MessageBoxResult.No)
+                    return;
                 DeleteUriScheme();
                 RegisterUriScheme(UriScheme);
+            });
+            DeleteRegistryCommand = new DelegateCommand(() =>
+            {
+                var result = MessageBox.Show("レジストリを削除すると、以前のブックマークが使えなくなります。\nよろしいですか？",
+                    "TNLauncher", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+                if(result == MessageBoxResult.No)
+                    return;
+                DeleteUriScheme();
             });
 
             var args = Environment.GetCommandLineArgs();
