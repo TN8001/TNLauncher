@@ -111,13 +111,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="_Help.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="_readme.txt" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="_up.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_Help.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

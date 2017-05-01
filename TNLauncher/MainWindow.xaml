@@ -36,8 +36,8 @@
         <Setter.Value>
           <ControlTemplate TargetType="{x:Type ToggleButton}">
             <Grid>
-              <Image Width="24"
-                     Height="24"
+              <Image Width="16"
+                     Height="16"
                      Source="{StaticResource Help}" />
               <Popup AllowsTransparency="True"
                      IsOpen="{Binding IsChecked,
