@@ -16,10 +16,6 @@ namespace TNLauncher
 
     public partial class MainWindow : Window
     {
-        //ToDo readme icon (c)粉塵ex 2017
-        //http://www.vector.co.jp/vpack/browse/person/an059721.html
-        //http://com.nicovideo.jp/community/co2136247/
-
         private ViewModel vm => DataContext as ViewModel;
         public MainWindow()
         {
