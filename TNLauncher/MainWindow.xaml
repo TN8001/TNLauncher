@@ -137,15 +137,6 @@
     </DataTemplate>
   </Window.Resources>
   <DockPanel>
-    <Menu DockPanel.Dock="Top">
-      <MenuItem Header="ファイル(_F)" />
-      <MenuItem Header="編集(_E)" />
-      <MenuItem Header="オプション(_O)">
-        <MenuItem Header="オプション1" IsCheckable="True" />
-        <MenuItem Header="オプション2" IsCheckable="True" />
-        <MenuItem Header="オプション3" IsCheckable="True" />
-      </MenuItem>
-    </Menu>
     <Grid DockPanel.Dock="Bottom">
       <Grid.ColumnDefinitions>
         <ColumnDefinition />
