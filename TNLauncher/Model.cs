@@ -121,7 +121,6 @@ namespace TNLauncher
             var split = unescape.Split('?');
             var path = split[0];
             var commandLine = split.ElementAtOrDefault(1); ;
-
             Process.Start(path, commandLine);
         }
         ///<summary>指定パスにNetscape Bookmark Formatで書き出し。</summary>
