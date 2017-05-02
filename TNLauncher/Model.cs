@@ -34,8 +34,7 @@ namespace TNLauncher
             {
                 if(classesKey == null) return null; //レジストリに登録がなかった場合
 
-                var keys = classesKey.GetSubKeyNames();
-                keys = keys.Where(x => x.StartsWith(SCHEME_PREFIX)).ToArray();
+                var keys = classesKey.GetSubKeyNames().Where(x => x.StartsWith(SCHEME_PREFIX));
                 foreach(var scheme in keys)
                 {
                     //HKCU\SOFTWARE\Classes\tn-launcher で始まるキー
@@ -93,8 +92,7 @@ namespace TNLauncher
             {
                 if(classesKey == null) return;
 
-                var keys = classesKey.GetSubKeyNames();
-                keys = keys.Where(x => x.StartsWith(SCHEME_PREFIX)).ToArray();
+                var keys = classesKey.GetSubKeyNames().Where(x => x.StartsWith(SCHEME_PREFIX));
                 foreach(var scheme in keys)
                 {
                     //HKCU\SOFTWARE\Classes\tn-launcher で始まるキー
@@ -143,9 +141,11 @@ namespace TNLauncher
                       + $"ICON=\"data:image/png;base64,{item.Base64}\">{item.Title}</A>\n";
             }
             text += "</DL><p>\n";
+
             using(var sw = new StreamWriter(path, false, Encoding.UTF8))
                 sw.Write(text);
 
+            //インポートファイルを出した以上、スキームがないとまずいので整理して登録
             DeleteUriScheme();
             RegisterUriScheme(UriScheme);
         }

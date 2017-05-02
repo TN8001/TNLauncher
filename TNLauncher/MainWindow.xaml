@@ -164,7 +164,7 @@
                                   ElementName=textBox}" />
       <ToggleButton Grid.Column="4"
                     Margin="0,0,5,0"
-                    Content="Chromeのブックマークマネージャでインポートできるファイルを、指定フォルダに作ります。インポートすると「インポートしたブックマーク」に入るので好きなところに移動してください。"
+                    Content="Chromeのブックマークマネージャでインポートできるファイルを、指定フォルダに作ります。&#xa;インポートすると「インポートしたブックマーク」に入るので好きなところに移動してください。"
                     Style="{StaticResource HelpButton}" />
     </Grid>
     <Grid DockPanel.Dock="Bottom">
@@ -175,7 +175,10 @@
         <ColumnDefinition Width="Auto" />
         <ColumnDefinition Width="Auto" />
       </Grid.ColumnDefinitions>
-      <HeaderedContentControl Content="UriScheme"
+      <Border Grid.ColumnSpan="5"
+              BorderBrush="#FFEFEFF2"
+              BorderThickness="0,1,0,0" />
+      <HeaderedContentControl Content="URIスキーム"
                               Header="既定では「tn-launcher-(小文字の英数字11文字)」です。安全性を高めたい場合や、ブックマーク側と不整合が起きた時に変更してください。"
                               Style="{StaticResource HelpTextBlock}" />
 
@@ -195,8 +198,8 @@
       <Button Grid.Column="3"
               Margin="5"
               HorizontalAlignment="Right"
-              Command="{Binding CreateRegistryCommand}"
-              Content="UriSchemeの変更"
+              Command="{Binding CreateUriSchemeCommand}"
+              Content="URIスキームの変更"
               IsEnabled="{Binding (Validation.HasError),
                                   Converter={StaticResource BoolInvertConverter},
                                   ElementName=textBox}" />

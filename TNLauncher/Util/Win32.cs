@@ -1,4 +1,7 @@
-﻿//http://palepoli.skr.jp/tips/dotnet/shfileinfo.php
+﻿//(C) sasakima-nao 2002-2017
+//http://palepoli.skr.jp/tips/dotnet/shfileinfo.php
+//を少々改変しました
+
 using System;
 using System.Windows;
 using System.Windows.Media.Imaging;
@@ -75,7 +78,7 @@ namespace TNLauncher
             return true;
         }
     }
-    static class BitmapSourceExtensions
+    internal static class BitmapSourceExtensions
     {
         public static string ToBase64String(this BitmapSource bitmap)
         {

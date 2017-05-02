@@ -13,7 +13,7 @@ namespace TNLauncher
         ///<summary>ブックマークに表示する名前</summary>
         public string Title { get { return _Title; } set { SetProperty(ref _Title, value); } }
         private string _Title;
-        ///<summary>小アイコン(16*16)をpngにしてBase64エンコード</summary>
+        ///<summary>小アイコン(16*16)をpngにしてBase64エンコード 変更してもアイコンの更新はしない</summary>
         public string Base64 { get { return _Base64; } set { SetProperty(ref _Base64, value); } }
         private string _Base64;
         ///<summary>Process.Startするファイルに渡すコマンドライン</summary>

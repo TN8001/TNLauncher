@@ -4,6 +4,17 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows;
 
+//URIスキーム指定のイメージ
+//tn-launcher:c:\hoge.exe           ＯＫ
+//tn-launcher:hoge.exe              Process.Startで通れば絶対パスでなくてもＯＫ
+//tn-launcher:c:\fuga.txt           関連付けができていれば実行ファイルでなくてもＯＫ 
+//tn-launcher:hoge.exe?-d -f        オプション等
+//tn-launcher:hoge.exe?c:\fuga.txt  ファイル指定
+//tn-launcher:hoge.exe?fuga.txt     HKLM(HKCU)\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\Path
+//                                  に値があればそこからの相対パスはＯＫ
+//tn-launcher:ho ge.exe?"fu ga.txt" スペースが入る場合
+
+
 namespace TNLauncher
 {
     public class ViewModel : Model
@@ -15,15 +26,21 @@ namespace TNLauncher
             set
             {
                 if(value.Count() < 4)
-                    throw new AggregateException("4文字以上が必要です"); //4文字の根拠はありません
+                    throw new AggregateException("最低4文字は入れてください"); //4文字の根拠はありません
+                if(value.Count() > 200)
+                    throw new AggregateException("長すぎます"); //ルートから255文字以内 https://msdn.microsoft.com/ja-jp/library/windows/desktop/ms724872(v=vs.85).aspx
                 if(!(Regex.Match(value, "^[a-z0-9]+$")).Success)
-                    throw new AggregateException("[a-z0-9] 半角小文字英数字のみで入力してください");
+                    throw new AggregateException("半角小文字英数字[a-z0-9]のみで入力してください");
                 UriScheme = $"{SCHEME_PREFIX}-{value}";
             }
         }
+        ///<summary>ブックマークアイテムを追加 引数:ファイルパス</summary>
         public DelegateCommand<string> AddItemCommand { get; }
-        public DelegateCommand CreateRegistryCommand { get; }
+        ///<summary>URIスキームを作成 変更</summary>
+        public DelegateCommand CreateUriSchemeCommand { get; }
+        ///<summary>レジストリを削除</summary>
         public DelegateCommand DeleteRegistryCommand { get; }
+        ///<summary>ブックマークインポートファイルを作成</summary>
         public DelegateCommand ExportCommand { get; }
 
         public ViewModel()
@@ -34,9 +51,9 @@ namespace TNLauncher
             });
 
             AddItemCommand = new DelegateCommand<string>((str) => AddItem(str));
-            CreateRegistryCommand = new DelegateCommand(() =>
+            CreateUriSchemeCommand = new DelegateCommand(() =>
             {
-                var result = MessageBox.Show("URIスキームを変更すると、以前のブックマークが使えなくなります。\nよろしいですか？",
+                var result = MessageBox.Show("URIスキームを変更すると、作成済みのブックマークが使えなくなります。\nよろしいですか？",
                     "TNLauncher", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
                 if(result == MessageBoxResult.No)
                     return;
@@ -45,7 +62,7 @@ namespace TNLauncher
             });
             DeleteRegistryCommand = new DelegateCommand(() =>
             {
-                var result = MessageBox.Show("レジストリを削除すると、以前のブックマークが使えなくなります。\nよろしいですか？",
+                var result = MessageBox.Show("レジストリを削除すると、作成済みのブックマークが使えなくなります。\nよろしいですか？",
                     "TNLauncher", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
                 if(result == MessageBoxResult.No)
                     return;
@@ -101,7 +118,7 @@ namespace TNLauncher
             }
             else //自身の起動にコマンドラインが付いていた場合
             {
-
+                //逆変換（インポートファイルの読み込み）は、アイコン周りが面倒そうなので実装予定なし
             }
         }
         ///<summary>初回確認画面表示 同意ならtrue</summary>
