@@ -5,26 +5,42 @@
         Title="Welcome - TNLauncher"
         Width="600"
         Height="400"
+        Icon="Resources/App.ico"
         WindowStartupLocation="CenterScreen">
-  <ScrollViewer>
-    <StackPanel>
-      <TextBox Padding="5"
-               Text="{l:Text Resources/Readme.txt}"
-               TextWrapping="Wrap" />
-      <StackPanel Grid.Row="1"
-                  HorizontalAlignment="Right"
-                  Orientation="Horizontal">
-        <TextBlock VerticalAlignment="Center" Text="こ了承していただけますか？" />
-        <Button MinWidth="80"
-                Margin="5"
-                Click="Button_Click"
-                Content="はい" />
-        <Button MinWidth="80"
-                Margin="5"
-                Content="いいえ"
-                IsCancel="True"
-                IsDefault="True" />
+  <DockPanel>
+    <StackPanel Background="#FFF6F6F6"
+                DockPanel.Dock="Top"
+                Orientation="Horizontal">
+      <Image Width="64"
+             Height="64"
+             Source="Resources/App.png" />
+      <StackPanel Margin="10,0" VerticalAlignment="Center">
+        <TextBlock FontSize="24"
+                   FontWeight="Bold"
+                   Text="TNLauncher" />
+        <TextBlock Text="お試しいただき、ありがとうございます。" />
       </StackPanel>
     </StackPanel>
-  </ScrollViewer>
+    <ScrollViewer>
+      <StackPanel>
+        <TextBlock Padding="5"
+                   Text="{l:Text Resources/Readme.txt}"
+                   TextWrapping="Wrap" />
+        <StackPanel Margin="0,0,0,20"
+                    HorizontalAlignment="Right"
+                    Orientation="Horizontal">
+          <TextBlock VerticalAlignment="Center" Text="こ了承していただけますか？" />
+          <Button MinWidth="80"
+                  Margin="5"
+                  Click="Button_Click"
+                  Content="はい" />
+          <Button MinWidth="80"
+                  Margin="5"
+                  Content="いいえ"
+                  IsCancel="True"
+                  IsDefault="True" />
+        </StackPanel>
+      </StackPanel>
+    </ScrollViewer>
+  </DockPanel>
 </Window>
