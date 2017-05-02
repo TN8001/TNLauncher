@@ -1,5 +1,5 @@
 # TNLauncher
-![アプリスクリーンショット](https://github.com/TN8001/TNLauncher/blob/master/TNLauncher/AppImage.png)
+![アプリスクリーンショット](https://github.com/TN8001/TNLauncher/blob/master/AppImage.png)
 ## 概要
 Google Chromeのお気に入りから、URIスキームを使ってデスクトップアプリケーションを起動するWindows用アプリケーションです。
 ## 特徴
