@@ -13,6 +13,7 @@
   <Window.Resources>
     <l:BoolInvertConverter x:Key="BoolInvertConverter" />
     <BitmapImage x:Key="Help" UriSource="_Help.png" />
+    
     <ControlTemplate x:Key="ErrorTemplate">
       <DockPanel>
         <TextBlock HorizontalAlignment="Left"
@@ -28,6 +29,7 @@
         </Border>
       </DockPanel>
     </ControlTemplate>
+    
     <Style x:Key="HelpButton" TargetType="{x:Type ToggleButton}">
       <Setter Property="VerticalAlignment" Value="Center" />
       <Setter Property="Margin" Value="0" />
@@ -200,7 +202,6 @@
       <ToggleButton Grid.Column="4"
                     Content="URIスキームを変更すると、以前作成したブックマークは動かなくなります。"
                     Style="{StaticResource HelpButton}" />
-
     </Grid>
     <Grid>
       <Grid.ColumnDefinitions>
@@ -214,7 +215,6 @@
                                   Header="実行ファイルまたは関連付けされたファイルを、ドラッグ＆ドロップします。"
                                   Style="{StaticResource HelpTextBlock}" />
         </GroupBox.Header>
-
         <ListBox x:Name="listBox"
                  AllowDrop="True"
                  Drop="ListBox_Drop"
