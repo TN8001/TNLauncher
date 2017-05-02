@@ -13,7 +13,8 @@ Google Chromeのお気に入りから、URIスキームを使ってデスクト�
 1. ファイル生成ボタンを押す
 1. 出来たファイルをChromeのブックマークマネージャからインポートする
 1. 「インポートされたブックマーク」フォルダから好みの位置に移動  
-以上
+
+以上  
 [詳しい説明を書きました](https://tnlauncher.blogspot.jp/)
 ## ライセンス
 [MIT](https://github.com/TN8001/TNLauncher/blob/master/LICENSE)
