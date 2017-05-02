@@ -35,7 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\_app.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\App.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -113,13 +113,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\_readme.txt" />
+    <Resource Include="Resources\Readme.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\_Help.png" />
+    <Resource Include="Resources\Help.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\_app.ico" />
+    <Resource Include="Resources\App.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
