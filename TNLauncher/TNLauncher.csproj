@@ -59,13 +59,13 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model.cs" />
-    <Compile Include="Util\Converter.cs" />
-    <Compile Include="Util\DelegateCommand.cs" />
+    <Compile Include="NewFolder1\Converter.cs" />
+    <Compile Include="NewFolder1\DelegateCommand.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Welcome.xaml.cs">
       <DependentUpon>Welcome.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Util\Win32.cs" />
+    <Compile Include="NewFolder1\Win32.cs" />
     <Compile Include="ViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -75,7 +75,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Util\BindableBase.cs" />
+    <Compile Include="NewFolder1\BindableBase.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
