@@ -12,7 +12,7 @@
         mc:Ignorable="d">
   <Window.Resources>
     <l:BoolInvertConverter x:Key="BoolInvertConverter" />
-    <BitmapImage x:Key="Help" UriSource="_Help.png" />
+    <BitmapImage x:Key="Help" UriSource="Resources\_Help.png" />
     
     <ControlTemplate x:Key="ErrorTemplate">
       <DockPanel>

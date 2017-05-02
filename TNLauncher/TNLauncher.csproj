@@ -35,7 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>_app.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\_app.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -58,13 +58,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="util\Converter.cs" />
-    <Compile Include="util\DelegateCommand.cs" />
+    <Compile Include="Model.cs" />
+    <Compile Include="Util\Converter.cs" />
+    <Compile Include="Util\DelegateCommand.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Welcome.xaml.cs">
       <DependentUpon>Welcome.xaml</DependentUpon>
     </Compile>
-    <Compile Include="util\Win32.cs" />
+    <Compile Include="Util\Win32.cs" />
     <Compile Include="ViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -74,7 +75,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="util\BindableBase.cs" />
+    <Compile Include="Util\BindableBase.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -112,16 +113,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="_readme.txt" />
+    <Resource Include="Resources\_readme.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="_Help.png" />
+    <Resource Include="Resources\_Help.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="AppImage.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="_app.ico" />
+    <Resource Include="Resources\_app.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
