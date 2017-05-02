@@ -13,7 +13,7 @@
   <Window.Resources>
     <l:BoolInvertConverter x:Key="BoolInvertConverter" />
     <BitmapImage x:Key="Help" UriSource="Resources\_Help.png" />
-    
+
     <ControlTemplate x:Key="ErrorTemplate">
       <DockPanel>
         <TextBlock HorizontalAlignment="Left"
@@ -29,7 +29,7 @@
         </Border>
       </DockPanel>
     </ControlTemplate>
-    
+
     <Style x:Key="HelpButton" TargetType="{x:Type ToggleButton}">
       <Setter Property="VerticalAlignment" Value="Center" />
       <Setter Property="Margin" Value="0" />

@@ -31,7 +31,7 @@ namespace TNLauncher
         {
             var files = e.Data.GetData(DataFormats.FileDrop) as string[];
             foreach(var file in files)
-                vm.AddItem(file);
+                vm.AddItemCommand.Execute(file);
         }
     }
 }

@@ -9,7 +9,7 @@
   <ScrollViewer>
     <StackPanel>
       <TextBox Padding="5"
-               Text="{l:Text Resources\_readme.txt}"
+               Text="{l:Text Resources\\_readme.txt}"
                TextWrapping="Wrap" />
       <StackPanel Grid.Row="1"
                   HorizontalAlignment="Right"
