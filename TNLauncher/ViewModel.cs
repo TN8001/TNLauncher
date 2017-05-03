@@ -42,6 +42,7 @@ namespace TNLauncher
         public DelegateCommand DeleteRegistryCommand { get; }
         ///<summary>ブックマークインポートファイルを作成</summary>
         public DelegateCommand ExportCommand { get; }
+        public DelegateCommand ShowAboutCommand { get; }
 
         public ViewModel()
         {
@@ -76,6 +77,12 @@ namespace TNLauncher
                 if(dlg.ShowDialog() != true) return;
 
                 Export(dlg.FileName);
+            });
+            ShowAboutCommand = new DelegateCommand(() =>
+            {
+                var dlg = new About();
+                dlg.Owner = Application.Current.MainWindow;
+                dlg.ShowDialog();
             });
 
             Run();
@@ -122,6 +129,10 @@ namespace TNLauncher
             }
         }
         ///<summary>初回確認画面表示 同意ならtrue</summary>
-        private bool Agreement() => new Welcome().ShowDialog() == true;
+        private bool Agreement()
+        {
+            var dlg = new Welcome();
+            return dlg.ShowDialog() == true;
+        }
     }
 }
